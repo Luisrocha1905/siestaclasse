@@ -1,0 +1,75 @@
+Executable      : siesta
+Version         : 5.2.1
+Architecture    : x86_64
+Compiler version: GNU-13.3.0
+Compiler flags  : -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem <prefix>/include -I<prefix>/_build_env/include -fdebug-prefix-map=<prefix>/work=/usr/local/src/conda/siesta-5.2.1 -fdebug-prefix-map=<prefix>=/usr/local/src/conda-prefix -I<prefix>/lib -fallow-argument-mismatch -O3
+Parallelisations: none
+NetCDF support
+NetCDF-4 support
+Lua support
+DFT-D3 support
+
+Runtime information:
+* Directory : /home/samba/homes/convidat/STM/run
+* Running in serial mode.
+>> Start of run:  20-MAY-2025  11:55:56
+
+                           *********************** 
+                           *  WELCOME TO SIESTA  * 
+                           *********************** 
+
+ NOTE: Siesta V5 introduces some new defaults for basis-set generation
+ NOTE: which might lead to slightly different numerical results.
+ NOTE: Please see the manual for full details and compatibility measures.
+
+
+reinit: Reading from file stm.fdf
+
+reinit: -----------------------------------------------------------------------
+reinit: System Name: 
+reinit: -----------------------------------------------------------------------
+reinit: System Label: optimization
+reinit: -----------------------------------------------------------------------
+
+initatom: Reading input for the pseudopotentials and atomic orbitals ----------
+Species number:   1 Atomic number:    6 Label: C
+Species number:   2 Atomic number:    1 Label: H
+
+Ground state valence configuration (from tables):   2s02  2p02  3d00  4f00
+Ground state valence configuration (from tables):   1s01  2p00  3d00  4f00
+
+---- Processing specs for species: C
+pseudo_read: ERROR: Pseudopotential file not found: C.{vps,psf,psml}
+
+
+Stopping Program from Node:    0
+Stopping Program from Node:    0
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+#0  0x7c46bd223960 in ???
+#1  0x7c46bd222ac5 in ???
+#2  0x7c46bce4251f in ???
+	at ./signal/../sysdeps/unix/sysv/linux/x86_64/libc_sigaction.c:0
+#3  0x7c46bce969fc in __pthread_kill_implementation
+	at ./nptl/pthread_kill.c:44
+#4  0x7c46bce969fc in __pthread_kill_internal
+	at ./nptl/pthread_kill.c:78
+#5  0x7c46bce969fc in __GI___pthread_kill
+	at ./nptl/pthread_kill.c:89
+#6  0x7c46bce42475 in __GI_raise
+	at ../sysdeps/posix/raise.c:26
+#7  0x7c46bce287f2 in __GI_abort
+	at ./stdlib/abort.c:79
+#8  0x57d5db541223 in ???
+#9  0x57d5db3ffc6a in ???
+#10  0x57d5db1f1751 in ???
+#11  0x57d5db0f1e9a in ???
+#12  0x57d5db0e60b4 in ???
+#13  0x7c46bce29d8f in __libc_start_call_main
+	at ../sysdeps/nptl/libc_start_call_main.h:58
+#14  0x7c46bce29e3f in __libc_start_main_impl
+	at ../csu/libc-start.c:392
+#15  0x57d5db0e6212 in ???
+#16  0xffffffffffffffff in ???
